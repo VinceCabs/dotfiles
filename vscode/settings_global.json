@@ -1,0 +1,61 @@
+{
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[python]": {
+        "editor.rulers": [
+            88,
+            100
+        ]
+    },
+    "[sql]": {
+        "editor.defaultFormatter": "adpyke.vscode-sql-formatter"
+    },
+    "conventionalCommits.autoCommit": false,
+    "conventionalCommits.emojiFormat": "emoji",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "diffEditor.renderSideBySide": true,
+    "editor.bracketPairColorization.enabled": true,
+    "editor.columnSelection": false,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.renderWhitespace": "trailing",
+    "editor.suggestSelection": "first",
+    "git.confirmSync": false,
+    "git.enableSmartCommit": true,
+    "liveServer.settings.donotShowInfoMsg": true,
+    "liveServer.settings.donotVerifyTags": true,
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "problems.showCurrentInStatus": true,
+    "projectManager.git.baseFolders": [
+        "E:\\Dev\\Github_VinceCabs",
+        "${env:HOME}\\Dev\\Github_VinceCabs"
+    ],
+    "python.analysis.completeFunctionParens": true,
+    "python.formatting.provider": "black",
+    "python.languageServer": "Pylance",
+    "python.linting.enabled": true,
+    "python.terminal.activateEnvInCurrentTerminal": true,
+    "security.workspace.trust.untrustedFiles": "open",
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "workbench.iconTheme": "material-icon-theme",
+    // Jenkins validate
+    "jenkins.pipeline.linter.connector.pass": "****************",
+    "jenkins.pipeline.linter.connector.url": "****************",
+    "jenkins.pipeline.linter.connector.user": "****************",
+}

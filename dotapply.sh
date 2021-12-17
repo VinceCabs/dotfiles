@@ -7,23 +7,23 @@ hostname: $(hostname)
 OS: $OS
 ============================="
 
-export DOTFILES_PATH="$HOME/.dotfiles"
+DOTFILES_PATH="$HOME/.dotfiles"
 
 link_dotfile() {
     rm -f ~/$1 && ln -s -f $DOTFILES_PATH/$1 ~/$1
 }
 
-echo "git pull..."
+echo "Git pull..."
 git -C $DOTFILES_PATH pull
 
-echo "loading secrets..."
+echo "Loading secrets..."
 source $DOTFILES_PATH/.secrets
 
-echo "shell..."
+echo "Shell..."
 link_dotfile .bashrc
 
 # Git
-echo "git..."
+echo "Git..."
 link_dotfile .gitconfig
 git config --global user.email "$GH_EMAIL"  # secret email
 # git config --global credentials.helper wincred  # Windows Only
