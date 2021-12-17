@@ -14,7 +14,7 @@
     alias = """! git config --get-regexp ^alias\\. \
 		| sed -e s/^alias\\.// -e s/\\ /\\ =\\ / \
 		| sort \
-	""" # print these aliases
+	  """ # print these aliases
     st = status -s
     co = checkout
     cb = checkout -b  # create branch and checkout on it
