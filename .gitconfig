@@ -10,34 +10,34 @@
 
 [alias]
 
-    # personal
-    alias = """! git config --get-regexp ^alias\\. \
-		| sed -e s/^alias\\.// -e s/\\ /\\ =\\ / \
-		| sort \
-	  """ # print these aliases
-    st = status -s
-    co = checkout
-    cb = checkout -b  # create branch and checkout on it
-    newb = checkout -b
-    master = checkout master
-    main = checkout main
-    a = add
-    aa = add -A
-    unstage = reset HEAD
-    c = commit
-    cm = commit -m
-    amend = !git add -A && git commit --amend
-    br = branch
-    brd = branch -d
-    brD = branch -D
-    merger = merge  # because I often type "merger", don't know why
-    l = log
-    ll = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-    graph = log --all --decorate --oneline --graph  # nice graphs
-    incoming = log --oneline ..@{u}
-    outgoing = log --oneline @{u}..
-    merged = branch --merged
-    dmerged = !git branch --merged | grep -v \"\\*\" | xargs -n 1 git branch -d  # delete merged branches
-    pushu = push -u origin HEAD
-    f = fetch --all
-    fpull = fetch --all && pull
+  # personal
+  alias = """! git config --get-regexp ^alias\\. \
+  | sed -e s/^alias\\.// -e s/\\ /\\ =\\ / \
+  | sort \
+  """ # print these aliases
+  st = status -s
+  co = checkout
+  cb = checkout -b  # create branch and checkout on it
+  newb = checkout -b
+  master = checkout master
+  main = checkout main
+  a = add
+  aa = add -A
+  unstage = reset HEAD
+  c = commit
+  cm = commit -m
+  amend = !git add -A && git commit --amend
+  br = branch
+  brd = branch -d
+  brD = branch -D
+  merger = merge  # because I often type "merger", don't know why
+  l = log
+  ll = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  graph = log --all --decorate --oneline --graph  # nice graphs
+  incoming = log --oneline ..@{u}
+  outgoing = log --oneline @{u}..
+  merged = branch --merged
+  dmerged = !git branch --merged | grep -v \"\\*\" | xargs -n 1 git branch -d  # delete merged branches
+  pushu = push -u origin HEAD
+  f = fetch --all
+  fpull = fetch --all && pull
