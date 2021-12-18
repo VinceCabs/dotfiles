@@ -17,17 +17,17 @@ echo "Git pull..."
 git -C $DOTFILES_PATH pull
 
 echo "Loading secrets..."
-source $DOTFILES_PATH/.secrets
+. $DOTFILES_PATH/.secrets
 
 echo "Shell..."
-test .bashrc_local && source .bashrc_local
+test $HOME/.bashrc_local && . $HOME/.bashrc_local
 link_dotfile .bashrc
 
 # Git
 echo "Git..."
 link_dotfile .gitconfig
 git config --global user.email "$GH_EMAIL"  # secret email
-# git config --global credentials.helper wincred  # Windows Only
+
 
 # Utils
 # prepend_path() {
