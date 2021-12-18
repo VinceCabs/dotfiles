@@ -25,8 +25,6 @@ link_dotfile .bashrc
 # Git
 echo "Git..."
 link_dotfile .gitconfig
-git config --global user.email "$GH_EMAIL"  # secret email
-
 
 # Utils
 # prepend_path() {

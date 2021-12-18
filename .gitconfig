@@ -1,6 +1,6 @@
 [user]
 	name = VinceCabs
-	email = <secret>
+	# email = stored in env var
 
 [credentials]
 	helper = store
