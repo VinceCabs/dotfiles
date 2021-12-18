@@ -12,3 +12,6 @@ alias gauth="gcloud auth login && gcloud auth application-default login"
 
 # sync dotfiles
 alias dotapply="sh $HOME/.dotfiles/dotapply.sh"
+
+# add .bashrc_local if exists
+test $HOME/.bashrc_local && . $HOME/.bashrc_local

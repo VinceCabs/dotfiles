@@ -20,7 +20,6 @@ echo "Loading secrets..."
 . $DOTFILES_PATH/.secrets
 
 echo "Shell..."
-test $HOME/.bashrc_local && . $HOME/.bashrc_local
 link_dotfile .bashrc
 
 # Git
