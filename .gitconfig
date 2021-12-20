@@ -34,17 +34,28 @@
   br = branch
   brd = branch -d
   brD = branch -D
+  # list branches and authors
+  brlist = "! git for-each-ref --format=' %(authorname) %09 %(refname)' --sort=authorname"
+  # list my branches 
+  brlistmy = "! git for-each-ref --format=' %(authorname) %09 %(refname)' --sort=authorname | grep "$(git config user.name)
+  # rename branch
+  rename = "!f() { branch_name=$(git rev-parse --abbrev-ref HEAD); git branch -m $1; git push origin $1; git push origin --delete $branch_name; }; f"
   merger = merge  # because I often type "merger", don't know why
   l = log
   ll = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   graph = log --all --decorate --oneline --graph  # nice graphs
   incoming = log --oneline ..@{u}
   outgoing = log --oneline @{u}..
+  df = diff --name-only
   merged = branch --merged
   dmerged = !git branch --merged | grep -v \"\\*\" | xargs -n 1 git branch -d  # delete merged branches
   pushu = push -u origin HEAD
   f = fetch --all
   fpull = fetch --all && pull
+  # print TODO (details)
+  todo = "! git grep --extended-regexp -I --line-number --break --heading --color=auto 'TODO|FIXME'"
+  # print TODO (short)
+  td = "! git grep --extended-regexp -I --line-number --count 'TODO|FIXME'"
 
 [color]
 	ui = true
