@@ -1,6 +1,13 @@
 DOTFILES_PATH="$HOME/.dotfiles"
 . $DOTFILES_PATH/.secrets
 
+# Utils
+prepend_path() {
+  if [ -d "$1" ]; then
+    export PATH="$1:$PATH"
+  fi
+}
+
 # aliases
 alias ll='ls -alF'
 alias ..="cd .."
@@ -22,3 +29,6 @@ alias dotapply="sh $HOME/.dotfiles/dotapply.sh"
 # Git
 export GIT_AUTHOR_EMAIL=$GH_EMAIL
 export GIT_COMMITTER_EMAIL=$GH_EMAIL
+
+# bin
+prepend_path $HOME/bin

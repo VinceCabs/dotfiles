@@ -10,7 +10,7 @@ OS: $OS
 DOTFILES_PATH="$HOME/.dotfiles"
 
 link_dotfile() {
-    rm -f ~/$1 && ln -s -f $DOTFILES_PATH/$1 ~/$1
+    rm -rf ~/$1 && ln -s -f $DOTFILES_PATH/$1 ~/$1
 }
 
 echo "Git pull..."
@@ -26,9 +26,9 @@ link_dotfile .bashrc
 echo "Git..."
 link_dotfile .gitconfig
 
-# Utils
-# prepend_path() {
-#   if [ -d "$1" ]; then
-#     export PATH="$1:$PATH"
-#   fi
-# }
+# bins
+echo "Bins..."
+link_dotfile bin
+
+# clean
+unset -f link_dotfile
