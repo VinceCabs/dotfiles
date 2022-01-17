@@ -27,6 +27,9 @@
   main = checkout main
   a = add
   aa = add -A
+  ssave = stash save
+  slist = stash list
+  spop = stash pop
   unstage = reset HEAD
   c = commit
   cm = commit -m
