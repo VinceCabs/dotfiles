@@ -2,7 +2,7 @@
 	name = VinceCabs
 	# email = stored in env var
 
-[credentials]
+[credential]
 	helper = store
 
 [core]
@@ -77,3 +77,7 @@
 	old = red bold
 	new = green bold
 	whitespace = red reverse
+[credential]
+	helper = store
+	helper = erase
+	helper = erase
