@@ -14,9 +14,9 @@ link_dotfile() {
 }
 
 setup_autohotkey() {
+    cmd "/c start %USERPROFILE%\.dotfiles\bin\AutoHotkeyU64.exe %USERPROFILE%\.dotfiles\bin\ahk_scripts.ahk"
     cp $DOTFILES_PATH/bin/AutoHotkey.lnk "$APPDATA/Microsoft/Windows/Start Menu/Programs/Startup";
-
-    echo "  AutoHotkey set on startup (restart required)";
+    echo "  AutoHotkey started and set on startup";
 }
 
 if [ $OS = "Windows_NT" ]

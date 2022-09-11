@@ -1,4 +1,5 @@
 ﻿#Requires AutoHotkey v1.1
+#SingleInstance Force
 
 ; This AutoHotkey script is to Open, Restore or Minimize the desires Apps using the configured shortcuts key (hotkeys) you want.
 ; There are three functions you can use for this: 
