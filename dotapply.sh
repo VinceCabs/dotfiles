@@ -16,8 +16,14 @@ link_dotfile() {
 setup_autohotkey() {
     cp $DOTFILES_PATH/bin/AutoHotkey.lnk "$APPDATA/Microsoft/Windows/Start Menu/Programs/Startup";
 
-    echo "...AutoHotkey set on startup (restart required)";
+    echo "  AutoHotkey set on startup (restart required)";
 }
+
+if [ $OS = "Windows_NT" ]
+then
+    echo "Windows detected"
+    win=true
+fi
 
 echo "Git pull..."
 git -C $DOTFILES_PATH pull
@@ -35,10 +41,9 @@ link_dotfile .gitconfig
 # bins
 echo "Bins..."
 link_dotfile bin
-if [ $OS = "Windows_NT" ]
+if $win
 then
-    echo "...Windows detected"
-   setup_autohotkey;
+    setup_autohotkey;
 fi
 
 # clean
