@@ -37,6 +37,12 @@ link_dotfile .bashrc
 # Git
 echo "Git..."
 link_dotfile .gitconfig
+if $win
+then
+    #TODO check that it doesn't slow git
+    git config --global http.sslbackend schannel
+    echo "  schannel configured"
+fi
 
 # bins
 echo "Bins..."
