@@ -150,13 +150,17 @@ ExtractAppTitle(FullTitle)
 */
 
 Capslock & r:: OpenOrShowAppBasedOnWindowTitle("Calendrier", "Outlook:calendar")
-Capslock & o:: OpenOrShowAppBasedOnWindowTitle("Boîte de réception", "Outlook")
-Capslock & c:: OpenOrShowAppBasedOnWindowTitle("Chrome", "Chrome")
+Capslock & e:: OpenOrShowAppBasedOnWindowTitle("Boîte de réception", "Outlook")
+Capslock & c:: 
+Capslock & t::
+    OpenOrShowAppBasedOnWindowTitle("Chrome", "Chrome")
+    return
 Capslock & s:: OpenOrShowAppBasedOnWindowTitle("Spotify", "C:\Users\MD1116\AppData\Roaming\Spotify\Spotify.exe")
 
 ; Not working:
 ; Capslock & t:: OpenOrShowAppBasedOnWindowTitle("Trello", "C:\Program Files (x86)\Google\Chrome\Application\chrome_proxy.exe  --profile-directory=Default --app-id=clpmljpjfechfakfehipmcophoepgjnj")
-; Capslock & c:: OpenOrShowAppBasedOnWindowTitle("Trello", "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe --app=https://trello.com/b/VJY63DDa/todo-pro")
+; Capslock & t:: OpenOrShowAppBasedOnWindowTitle("Trello", "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe --app=https://trello.com/b/VJY63DDa/todo-pro")
+; Capslock & t:: OpenOrShowAppBasedOnWindowTitle("Trello", "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe https://trello.com/b/VJY63DDa/todo-pro")
 ; spotPath := %A_AppData% "\Spotify\Spotify.exe"
 ; Capslock & s::
 ; {
