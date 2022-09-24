@@ -1,5 +1,6 @@
 ﻿#Requires AutoHotkey v1.1
 #SingleInstance Force
+; #InstallKeybdHook
 
 ; This AutoHotkey script is to Open, Restore or Minimize the desires Apps using the configured shortcuts key (hotkeys) you want.
 ; There are three functions you can use for this: 
@@ -155,9 +156,13 @@ Capslock & c::
 Capslock & t::
     OpenOrShowAppBasedOnWindowTitle("Chrome", "Chrome")
     return
-Capslock & s:: OpenOrShowAppBasedOnWindowTitle("Spotify", "C:\Users\MD1116\AppData\Roaming\Spotify\Spotify.exe")
+; TODO variabilize AppData folder
+Capslock & f:: OpenOrShowAppBasedOnWindowTitle("Spotify", "C:\Users\MD1116\AppData\Roaming\Spotify\Spotify.exe")
+Capslock & v:: OpenOrShowAppBasedOnWindowTitle("Visual Studio Code", "C:\Users\MD1116\AppData\Local\Programs\Microsoft VS Code\Code.exe")
+Capslock & y:: OpenOrShowAppBasedOnWindowTitle("Microsoft Teams", "C:\Users\MD1116\AppData\Local\Microsoft\Teams\Update.exe --processStart 'Teams.exe' --process-start-args '--profile=AAD'")
 
 ; Not working:
+; SC163 & r:: OpenOrShowAppBasedOnWindowTitle("Calendrier", "Outlook:calendar")
 ; Capslock & t:: OpenOrShowAppBasedOnWindowTitle("Trello", "C:\Program Files (x86)\Google\Chrome\Application\chrome_proxy.exe  --profile-directory=Default --app-id=clpmljpjfechfakfehipmcophoepgjnj")
 ; Capslock & t:: OpenOrShowAppBasedOnWindowTitle("Trello", "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe --app=https://trello.com/b/VJY63DDa/todo-pro")
 ; Capslock & t:: OpenOrShowAppBasedOnWindowTitle("Trello", "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe https://trello.com/b/VJY63DDa/todo-pro")
