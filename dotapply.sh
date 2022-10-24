@@ -19,11 +19,11 @@ setup_autohotkey() {
     echo "  AutoHotkey started and set on startup";
 }
 
-if [ $OS = "Windows_NT" ]
-then
-    echo "Windows detected"
-    win=true
-fi
+case "$(uname -s)" in
+    Linux*)     echo "Linux detected" && linux=true;;
+    MINGW*)     echo "Windows detected" && win=true;;
+    *)          echo="unknown OS: ${uname}"
+esac
 
 echo "Git pull..."
 git -C $DOTFILES_PATH pull
@@ -37,7 +37,7 @@ link_dotfile .bashrc
 # Git
 echo "Git..."
 link_dotfile .gitconfig
-if $win
+if [ $win ]
 then
     #TODO check that it doesn't slow git
     git config --global http.sslbackend schannel
@@ -47,7 +47,7 @@ fi
 # bins
 echo "Bins..."
 link_dotfile bin
-if $win
+if [ $win ]
 then
     setup_autohotkey;
 fi
