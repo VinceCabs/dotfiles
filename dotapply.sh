@@ -54,6 +54,7 @@ then
 fi
 
 # bins
+#TODO: update bins (https://gist.github.com/lukechilds/a83e1d7127b78fef38c2914c4ececc3c)
 echo "Bins..."
 link_dotfile bin
 if [ $win ]
