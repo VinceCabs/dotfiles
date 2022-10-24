@@ -19,6 +19,15 @@ setup_autohotkey() {
     echo "  AutoHotkey started and set on startup";
 }
 
+install_gh_cli() {
+    type -p curl >/dev/null || sudo apt install curl -y
+    curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
+    && sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
+    && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
+    && sudo apt update \
+    && sudo apt install gh -y
+}
+
 case "$(uname -s)" in
     Linux*)     echo "Linux detected" && linux=true;;
     MINGW*)     echo "Windows detected" && win=true;;
@@ -50,6 +59,11 @@ link_dotfile bin
 if [ $win ]
 then
     setup_autohotkey;
+fi
+if [ $linux ] && ! command -v gh &> /dev/null
+then
+    install_gh_cli;
+    echo "  Github CLI for Linux installed"
 fi
 
 # clean
