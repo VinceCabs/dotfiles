@@ -79,5 +79,3 @@
 	whitespace = red reverse
 [credential]
 	helper = store
-	helper = erase
-	helper = erase
