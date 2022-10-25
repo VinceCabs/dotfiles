@@ -1,4 +1,6 @@
 DOTFILES_PATH="$HOME/.dotfiles"
+FAV_GCP_PROJECT="engie-b2c-cloud"
+
 . $DOTFILES_PATH/.secrets
 
 # Utils
@@ -26,9 +28,10 @@ alias dotapply="sh $HOME/.dotfiles/dotapply.sh"
 # add .bashrc_local if exists
 [[ -f $HOME/.bashrc_local ]] && . $HOME/.bashrc_local
 
-# add Google Cloushell bashrc
+# add Google Cloushell bashrc and set GCP project
 if [ -f "/google/devshell/bashrc.google" ]; then
   source "/google/devshell/bashrc.google"
+  gcloud config set project $FAV_GCP_PROJECT
 fi
 
 # Git
