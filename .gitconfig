@@ -19,7 +19,7 @@
   | sed -e s/^alias\\.// -e s/\\ /\\ =\\ / \
   | sort \
   """ # print these aliases
-  st = status -s
+  st = status --short --branch
   co = checkout
   cb = checkout -b  # create branch and checkout on it
   newb = checkout -b
