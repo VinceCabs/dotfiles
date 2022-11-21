@@ -47,6 +47,7 @@
   merger = merge  # because I often type "merger", don't know why
   l = log
   ll = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  lp = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --patch
   graph = log --all --decorate --oneline --graph  # nice graphs
   incoming = log --oneline ..@{u}
   outgoing = log --oneline @{u}..
