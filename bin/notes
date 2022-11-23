@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 
-if command -v chrome &> /dev/null
+# Only for Windows (TODO)
+if command -v start &> /dev/null
 then
-    chrome "https://github.com/VinceCabs/dotfiles/tree/master/notes/$1"
+    start "https://github.com/VinceCabs/dotfiles/tree/master/notes/$1"
 else
-    echo "Chrome browser not found"
+    echo "Windows or browser not found"
 fi
