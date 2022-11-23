@@ -31,7 +31,7 @@ install_gh_cli() {
 case "$(uname -s)" in
     Linux*)     echo "Linux detected" && linux=true;;
     MINGW*)     echo "Windows detected" && win=true;;
-    *)          echo="unknown OS: ${uname}"
+    *)          echo "unknown OS: ${uname}"
 esac
 
 echo "Git pull..."
