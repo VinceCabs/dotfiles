@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+if command -v chrome &> /dev/null
+then
+    chrome "https://github.com/VinceCabs/dotfiles/tree/master/notes/$1"
+else
+    echo "Chrome browser not found"
+fi
