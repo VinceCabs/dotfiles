@@ -21,8 +21,8 @@ Interesting variables:
 
 ```
 >echo %USERPROFILE%
-C:\Users\MD1116
+C:\Users\VinceCabs
 
 >echo %APPDATA%
-C:\Users\MD1116\AppData\Roaming
+C:\Users\VinceCabs\AppData\Roaming
 ```
