@@ -169,9 +169,12 @@ Capslock & y:: OpenOrShowAppBasedOnWindowTitle("Microsoft Teams", "C:\Users\MD11
 ; spotPath := %A_AppData% "\Spotify\Spotify.exe"
 ; Capslock & s::
 ; {
-;     spotPath := %A_AppData% "\Spotify\Spotify.exe"
+;     spotPath := %A_AppData% "\Spotify\Spotify.exe" ; KO
+;     spotPath := %A_AppData%/Spotify/Spotify.exe ; KO
 ;     MsgBox, %spotPath%
-;     OpenOrShowAppBasedOnWindowTitle("Spotify", %spotPath%)
+;     OpenOrShowAppBasedOnWindowTitle("Spotify", %spotPath%) ; KO
+;     run, %A_AppData%\Spotify\Spotify.exe ; OK
+;     MsgBox, %A_AppData%\Spotify\Spotify.exe ; OK
 ; }
 
 ; Debug : 
