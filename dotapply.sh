@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+# from https://sharats.me/posts/shell-script-best-practices/
+set -o errexit
+# set -o nounset  # TODO fix error on unbound variables
+set -o pipefail
+# set -o xtrace
+
 echo \
 "=============================
 unamme: $(uname)
@@ -8,6 +14,8 @@ OS: $OS
 ============================="
 
 DOTFILES_PATH="$HOME/.dotfiles"
+
+# UTILS
 
 link_dotfile() {
     rm -rf ~/$1 && ln -s -f $DOTFILES_PATH/$1 ~/$1
@@ -28,11 +36,15 @@ install_gh_cli() {
     && sudo apt install gh -y
 }
 
+# DETECT OS
+
 case "$(uname -s)" in
     Linux*)     echo "Linux detected" && linux=true;;
     MINGW*)     echo "Windows detected" && win=true;;
     *)          echo "unknown OS: ${uname}"
 esac
+
+# SETUP
 
 echo "Git pull..."
 git -C $DOTFILES_PATH pull
