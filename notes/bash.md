@@ -4,6 +4,14 @@
 
 Alias [.bashrc](https://github.com/VinceCabs/dotfiles/blob/master/.bashrc#L11)
 
+## Shortcuts
+
+`Ctrl+r` : search history (`Enter` to run, `→` to edit command)
+
+`Ctrl+u`: delete from current cursor back to the start of the line
+
+`Ctrl+l` : clear screen
+
 ## File system
 
 Disk space:
@@ -146,11 +154,9 @@ hello        100%
 
 `crontab -e` : edit crontab
 
-`echo $(date) pouet pouet >> /tmp/custom_log` : un log
+`echo $(date) pouet pouet >> /tmp/custom_log` : log msg
 
 `echo $?`: print last exit code
-
-`Ctrl+r` : search history
 
 `sudo !!`, `!!`: last command
 
@@ -168,7 +174,7 @@ Shebang:
 #!/usr/bin/env bash
 ```
 
-Command substitution  `$()`:
+Command substitution `$()`:
 
 ```bash
 $ var=$( ls ~ | wc -l )
