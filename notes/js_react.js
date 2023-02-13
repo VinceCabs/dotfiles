@@ -5,32 +5,38 @@
 
 import React from "react";
 
-
 // React Version
 console.log(React.version);
 
 // Rappel DOM : document.createElement
 const element = document.createElement("h2");
-element.className = "name-of-class";  // note : "className" and not "class"
+element.className = "name-of-class"; // note : "className" and not "class"
 element.style = "color: red; background-color: blue";
 document.body.appendChild(element);
 
 // React.createElement(type, options, children)
 const element = React.createElement("h1", {}, "Hello World");
-const element = React.createElement("h1", { className: "center", style: "color: red" });
+const element = React.createElement("h1", {
+  className: "center",
+  style: "color: red",
+});
 // returns
 // {
 //   type: "h1",
 //   props: {className: "center", style: "color: red"}
 // };
-const element = React.createElement("h1", { className: "center", style: "color: red" }, "Hello World");
+const element = React.createElement(
+  "h1",
+  { className: "center", style: "color: red" },
+  "Hello World"
+);
 // returns
 // {
 //   type: "h1",
 //   props: {
 //     // ...
 //     children : "Hello World"
-//   } 
+//   }
 // };
 
 //// ReactDOM ////
@@ -46,7 +52,7 @@ const element = React.createElement("h1", {}, "Hello World");
 ReactDOM.render(element, root);
 
 //// JSX ////
-const title = <h1>Hello World</h1>
+const title = <h1>Hello World</h1>;
 // generates
 const title = React.createElement("h1", {}, "Hello World");
 // ! JSX is not HTML !
@@ -55,8 +61,13 @@ const title = React.createElement("h1", {}, "Hello World");
 const root = document.querySelector("#root");
 ReactDOM.render(<h1>Hello World</h1>, root);
 // with attributes (className !)
-render(<p className="selected" id="promo">Hello World</p>, root);
+render(
+  <p className="selected" id="promo">
+    Hello World
+  </p>,
+  root
+);
 
 // expressions
 const title = <h1>You have {2 + 3} notifications</h1>;
-const element = <p className="user-info">Welcome {user.name}!</p>
+const element = <p className="user-info">Welcome {user.name}!</p>;
