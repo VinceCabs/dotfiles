@@ -1,13 +1,18 @@
+/**  
+ * Utils
+ */
+
 // measure execution time
 console.time("Label A")
-let num = -999999
-for (let i = 0; i < 99999; i++) {
-    num++
+for (let i = 0; i < 100; i++) {
+    // do smthg
 }
-console.log(num)
 console.timeEnd("Label A")
+// Label A: 250.34 ms
 
-/** Promises */
+/**  
+ * Promises
+ */
 
 new Promise((res, rej) => { })
 // Promise have a status and a value :
@@ -25,7 +30,7 @@ new Promise((res, rej) => {
 
 new Promise((res, rej) => res("glop"))
 // [[PromiseState]]: "fulfilled"
-// [[PromiseResult]]: "pouet"
+// [[PromiseResult]]: "glop"
 
 new Promise((res, rej) => rej("pas glop"))
 // /!\ Uncaught (in promise) pas glop
@@ -42,11 +47,16 @@ Promise.resolve("2")
     .then(res => res * 2)  // 8
     .then(console.log)  // shortcut!
 
-/* Microtasks > Tasks */
+/** 
+ * Javascript event loop:
+ * Microtasks are executed before Tasks
+ */
 console.log("Start!")
+// schedule task
 setTimeout(() => {
     console.log("Timeout!")
 }, 0)
+// schedule microtask
 Promise.resolve("Promise!")
     .then(res => console.log(res))
 console.log("End!")
@@ -55,7 +65,9 @@ console.log("End!")
 // Promise!
 // Timeout!
 
-/** async/await (ES7) */
+/**
+ * async/await (ES7)
+ */
 
 // syntax (1)
 async function f() {
@@ -117,6 +129,7 @@ async function showLogo() {
             return response.json()
         })
         .then(user => {
+            console.log(user)
             let img = document.createElement('img')
             img.src = user.avatar_url
             document.body.prepend(img)
