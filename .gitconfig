@@ -34,7 +34,7 @@
   nuke = reset --hard HEAD
   c = commit
   cm = commit -m
-  amend = !git add -A && git commit --amend
+  amend = git commit --amend
   br = branch
   brd = branch -d
   brD = branch -D
