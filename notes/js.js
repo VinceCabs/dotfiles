@@ -34,6 +34,60 @@ createFruit(myFruit);
 // }
 
 /**
+ * Arrays manipulation
+ * from https://www.freecodecamp.org/news/manipulating-arrays-in-javascript/
+ */
+
+// toString()
+
+// join()
+
+// concat()
+
+// push(): adds items to the end
+const browsers = []
+browsers = ["chrome", "firefox", "edge"];
+browsers.push("safari", "opera mini"); // changes array
+console.log(browsers); // ["chrome", "firefox", "edge", "safari", "opera mini"]
+
+// pop(): removes last item and removes it
+browsers = ["chrome", "firefox", "edge"];
+browsers.pop(); // "edge"
+console.log(browsers); // ["chrome", "firefox"]
+
+// shift(): removes first item and returns it
+browsers = ["chrome", "firefox", "edge"];
+browsers.shift(); // "chrome"
+console.log(browsers); // ["firefox", "edge"]
+
+// unshift(): adds item(s) to the beginning
+browsers = ["chrome", "firefox", "edge"];
+browsers.unshift("safari");
+console.log(browsers); //  ["safari", "chrome", "firefox", "edge"]
+
+// splice(start)
+// splice(start, deleteCount)
+// splice(start, deleteCount, item1, item2, itemN)
+// removes items from start and optionnaly add other items
+const colors = ["green", "yellow", "blue", "purple"];
+colors.splice(0, 3); // returns ['green', 'yellow', 'blue']
+console.log(colors); // ["purple"]
+// /!\ stops at index 2, not 3
+
+// slice(start, end)
+// /!\ does not change the original array
+const animals = ["ant", "bison", "camel", "duck", "elephant"];
+animals.slice(2); // ["camel", "duck", "elephant"]
+animals.slice(2, 4); // ["camel", "duck"]
+
+// String.prototype.split(): retunrs an array with substrings
+// split(separator)
+// split(separator, limit) : limit the number of substring returne in the array
+const monthString = "Jan,Feb,Mar,Apr";
+monthString.split(","); //  ['Jan', 'Feb', 'Mar', 'Apr']
+monthString.split(",", 2); // ['Jan', 'Feb']
+
+/**
  * Promises
  */
 
