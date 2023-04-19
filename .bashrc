@@ -39,7 +39,7 @@ export GIT_AUTHOR_EMAIL=$GH_EMAIL
 export GIT_COMMITTER_EMAIL=$GH_EMAIL
 
 # CDPATH
-export CDPATH=:.:~:~/Dev
+export CDPATH=:.:~:~/Dev:~/dev
 
 # bin
 prepend_path $HOME/bin
