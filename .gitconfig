@@ -12,6 +12,15 @@
 [interactive]
 	diffFilter = diff-so-fancy --patch
 
+[credential]
+	helper = store
+
+[pull]
+	rebase = false
+
+[fetch]
+	prune = true
+
 [alias]
 
   # personal
@@ -79,5 +88,3 @@
 	old = red bold
 	new = green bold
 	whitespace = red reverse
-[credential]
-	helper = store
