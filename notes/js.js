@@ -45,7 +45,7 @@ createFruit(myFruit);
 // concat()
 
 // push(): adds items to the end
-const browsers = [];
+const browsers = []
 browsers = ["chrome", "firefox", "edge"];
 browsers.push("safari", "opera mini"); // changes array
 console.log(browsers); // ["chrome", "firefox", "edge", "safari", "opera mini"]
@@ -86,15 +86,6 @@ animals.slice(2, 4); // ["camel", "duck"]
 const monthString = "Jan,Feb,Mar,Apr";
 monthString.split(","); //  ['Jan', 'Feb', 'Mar', 'Apr']
 monthString.split(",", 2); // ['Jan', 'Feb']
-
-// filter()
-const words = ["spray", "limit", "elite", "exuberant", "destruction"];
-const result = words.filter((word) => word.length > 6); // ["exuberant", "destruction"];
-
-// map()
-// /!\ does not change the original array
-const numbers = [1, 2, 3, 4];
-numbers.map((x) => x * x); // [1, 4, 9, 16]
 
 /**
  * Promises
