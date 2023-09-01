@@ -166,6 +166,13 @@ hello        100%
 
 `cd xx; pwd`, `cd xx && pwd`: chain commands
 
+Get my public IP:
+
+```sh
+$ curl https://api.myip.com
+{"ip":"xx.xx.xxx.xxx","country":"France","cc":"FR"}:
+```
+
 ## Scripting
 
 Shebang:
