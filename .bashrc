@@ -43,3 +43,4 @@ export CDPATH=:.:~:~/Dev:~/dev
 
 # bin
 prepend_path $HOME/bin
+prepend_path $HOME/bin/yt-dlp
