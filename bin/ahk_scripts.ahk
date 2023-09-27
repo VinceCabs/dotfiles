@@ -159,7 +159,14 @@ Capslock & t::
 ; TODO variabilize AppData folder
 Capslock & f:: OpenOrShowAppBasedOnWindowTitle("Spotify", "C:\Users\MD1116\AppData\Roaming\Spotify\Spotify.exe")
 Capslock & v:: OpenOrShowAppBasedOnWindowTitle("Visual Studio Code", "C:\Users\MD1116\AppData\Local\Programs\Microsoft VS Code\Code.exe")
-Capslock & y:: OpenOrShowAppBasedOnWindowTitle("Microsoft Teams", "C:\Users\MD1116\AppData\Local\Microsoft\Teams\Update.exe --processStart 'Teams.exe' --process-start-args '--profile=AAD'")
+Capslock & g:: OpenOrShowAppBasedOnWindowTitle("Microsoft Teams", "C:\Users\MD1116\AppData\Local\Microsoft\Teams\Update.exe --processStart 'Teams.exe' --process-start-args '--profile=AAD'")
+
+CapsLock & h:: MsgBox, 
+    ( Join LTrim C
+        <E> Boîte de réception `t <R> Calendrier `t`t <T> Chrome`n
+        <F> Spotify `t`t <G> Microsoft Teams `t <H> Help`n
+        <C> Chrome `t`t <V> : VS Code`n
+    )
 
 ; Not working:
 ; SC163 & r:: OpenOrShowAppBasedOnWindowTitle("Calendrier", "Outlook:calendar")
