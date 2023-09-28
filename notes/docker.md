@@ -6,7 +6,7 @@
 
 `docker image ls` : list downloaded or built images
 
-`docker container --all` : list containers
+`docker container ls --all` : list containers
 
 `docker ps [--all]` : list running containers [or all containers]
 
