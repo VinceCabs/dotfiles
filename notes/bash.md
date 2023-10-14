@@ -166,6 +166,8 @@ hello        100%
 
 `cd xx; pwd`, `cd xx && pwd`: chain commands
 
+`diff <(ls) <(ll)`: process substitution
+
 Get my public IP:
 
 ```sh
