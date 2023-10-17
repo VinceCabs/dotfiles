@@ -96,9 +96,17 @@ atom-beta-1.35...
 
 ## Standard streams
 
-`0`: stdin
-`1`: stout
-`2`: stderr
+In short:
+
+| Std Stream    | Default     | File desc.    | Redirect. operator    | Short operator    |
+| :-----------: | :-----------: | :-----------: | :-----------: | :-----------: |
+| `stdin`      | Keyboard    | `0`    | `0<` | `<` |
+| `stdout` | Screen | `1` | `1>` | `>` |
+| `stderr` | Screen | `2` | `2>` | `2>` |
+| `stderr` to `stdin` | - | - | `2>&1` | `&>` |
+| to nothing | - | - | -|  `&> /dev/null`  |
+
+Examples:
 
 ```sh
 $ printf "1\n3"
@@ -106,15 +114,11 @@ $ printf "1\n3"
 3
 ```
 
-File to command `<`:
-
 ```sh
 $ printf "2\n1" > file && sort < file
 1
 2
 ```
-
-Write to stdout, stderr:
 
 ```sh
 $ cat test
@@ -128,18 +132,23 @@ stderr
 $ ./test 2>/dev/null
 stdout
 $ ./test &>/dev/null
+```
+
+tee:
+
+```sh
 $ echo "test" | tee file1 file2 file3 && ls
 test
 file0  file1  file2  file3
 ```
+
+[xargs](https://shapeshed.com/unix-xargs/):
 
 ```sh
 $ echo 'one two three' | xargs mkdir
 $ ls
 one two three
 ```
-
-[More `xargs`](https://shapeshed.com/unix-xargs/)
 
 ## ssh
 
