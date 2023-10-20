@@ -6,11 +6,21 @@ Alias [.bashrc](https://github.com/VinceCabs/dotfiles/blob/master/.bashrc#L11)
 
 ## Shortcuts
 
+<<<<<<< HEAD
 <kbd>Ctrl</kbd>+<kbd>r</kbd> : search history (<kbd>Enter</kbd> to run, → to edit command)
+=======
+`Ctrl+a/e`: beginning/end of line 
+
+`Ctrl+r`: search history (`Enter` to run, `→` to edit command)
+>>>>>>> 9e4e8d163dbf481dc1679a7fe4a917a56ed38ab2
 
 <kbd>Ctrl</kbd>+<kbd>u</kbd>: delete from current cursor back to the start of the line
 
+<<<<<<< HEAD
 <kbd>Ctrl</kbd>+<kbd>l</kbd> : clear screen
+=======
+`Ctrl+l`: clear screen
+>>>>>>> 9e4e8d163dbf481dc1679a7fe4a917a56ed38ab2
 
 ## File system
 
@@ -94,9 +104,17 @@ atom-beta-1.35...
 
 ## Standard streams
 
-`0`: stdin
-`1`: stout
-`2`: stderr
+In short:
+
+| Std Stream    | Default     | File desc.    | Redirect. operator    | Short operator    |
+| :-----------: | :-----------: | :-----------: | :-----------: | :-----------: |
+| `stdin`      | Keyboard    | `0`    | `0<` | `<` |
+| `stdout` | Screen | `1` | `1>` | `>` |
+| `stderr` | Screen | `2` | `2>` | `2>` |
+| `stderr` to `stdin` | - | - | `2>&1` | `&>` |
+| to nothing | - | - | -|  `&> /dev/null`  |
+
+Examples:
 
 ```sh
 $ printf "1\n3"
@@ -104,15 +122,11 @@ $ printf "1\n3"
 3
 ```
 
-File to command `<`:
-
 ```sh
 $ printf "2\n1" > file && sort < file
 1
 2
 ```
-
-Write to stdout, stderr:
 
 ```sh
 $ cat test
@@ -126,18 +140,23 @@ stderr
 $ ./test 2>/dev/null
 stdout
 $ ./test &>/dev/null
+```
+
+tee:
+
+```sh
 $ echo "test" | tee file1 file2 file3 && ls
 test
 file0  file1  file2  file3
 ```
+
+[xargs](https://shapeshed.com/unix-xargs/):
 
 ```sh
 $ echo 'one two three' | xargs mkdir
 $ ls
 one two three
 ```
-
-[More `xargs`](https://shapeshed.com/unix-xargs/)
 
 ## ssh
 
@@ -165,6 +184,8 @@ hello        100%
 `cd`: idem que `cd ~`
 
 `cd xx; pwd`, `cd xx && pwd`: chain commands
+
+`diff <(ls) <(ll)`: process substitution
 
 Get my public IP:
 
