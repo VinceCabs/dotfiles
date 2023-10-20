@@ -6,21 +6,13 @@ Alias [.bashrc](https://github.com/VinceCabs/dotfiles/blob/master/.bashrc#L11)
 
 ## Shortcuts
 
-<<<<<<< HEAD
-<kbd>Ctrl</kbd>+<kbd>r</kbd> : search history (<kbd>Enter</kbd> to run, → to edit command)
-=======
-`Ctrl+a/e`: beginning/end of line 
+<kbd>Ctrl</kbd>+<kbd>a/e</kbd>: beginning/end of line 
 
-`Ctrl+r`: search history (`Enter` to run, `→` to edit command)
->>>>>>> 9e4e8d163dbf481dc1679a7fe4a917a56ed38ab2
+<kbd>Ctrl</kbd>+<kbd>r</kbd> : search history (<kbd>Enter</kbd> to run, → to edit command)
 
 <kbd>Ctrl</kbd>+<kbd>u</kbd>: delete from current cursor back to the start of the line
 
-<<<<<<< HEAD
 <kbd>Ctrl</kbd>+<kbd>l</kbd> : clear screen
-=======
-`Ctrl+l`: clear screen
->>>>>>> 9e4e8d163dbf481dc1679a7fe4a917a56ed38ab2
 
 ## File system
 
