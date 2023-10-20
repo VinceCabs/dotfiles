@@ -2,71 +2,71 @@
 
 ## Navigation
 
-`Ctrl+Shift+P`, `F1` : Command palette
+<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd>, <kbd>F1</kbd> : Command palette
 
-`F3`, `Shift+F3` : naviguer dans les résultats de recherche
+<kbd>F3</kbd>, <kbd>Shift</kbd>+<kbd>F3</kbd> : naviguer dans les résultats de recherche
 
-`Ctrl+F4`ou `Ctrl+W` : fermeture tab **
+<kbd>Ctrl</kbd>+<kbd>F4</kbd>ou <kbd>Ctrl</kbd>+<kbd>W</kbd> : fermeture tab **
 
-`Ctrl+Shift+O` : accéder à un objet
+<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>O</kbd> : accéder à un objet
 
-`Ctrl+T` : objet dans le workspace
+<kbd>Ctrl</kbd>+<kbd>T</kbd> : objet dans le workspace
 
-`Ctrl+E` : fichier dans le workspace
+<kbd>Ctrl</kbd>+<kbd>E</kbd> : fichier dans le workspace
 
-`Ctrl+Shift+E` : explorer pane **
+<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>E</kbd> : explorer pane **
 
-`Ctrl+Tab` : switch tabs **
+<kbd>Ctrl</kbd>+<kbd>Tab</kbd> : switch tabs **
 
-`Ctrl+1`, `Ctrl+2` : focus and switch editor pane
+<kbd>Ctrl</kbd>+<kbd>1</kbd>, <kbd>Ctrl</kbd>+<kbd>2</kbd> : focus and switch editor pane
 
-`Ctrl+K Z` : zen mode
+<kbd>Ctrl</kbd>+<kbd>K</kbd> <kbd>Z</kbd> : zen mode
 
 ## Sidebar
 
-`Ctrl+B` : Sidebar visibility
+<kbd>Ctrl</kbd>+<kbd>B</kbd> : Sidebar visibility
 
-`Ctrl+Shift+E` : Show Explorer / Toggle focus **
+<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>E</kbd> : Show Explorer / Toggle focus **
 
-`Ctrl+Shift+F` : Show Search
+<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>F</kbd> : Show Search
 
-`Ctrl+Shift+G` : Show Source Control
+<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>G</kbd> : Show Source Control
 
-`Ctrl+Shift+D` : Show Debug
+<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>D</kbd> : Show Debug
 
-`Ctrl+Shift+X` : Show Extensions
+<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>X</kbd> : Show Extensions
 
 ## Editing
 
-`Ctrl+haut/bas` : scroll **
+<kbd>Ctrl</kbd>+<kbd>↑ / ↓</kbd> : scroll **
 
-`Ctrl+L` : Select current line **
+<kbd>Ctrl</kbd>+<kbd>L</kbd> : Select current line **
 
-`Ctrl+G` : accéder à la ligne 
+<kbd>Ctrl</kbd>+<kbd>G</kbd> : accéder à la ligne 
 
-`Ctrl+U` : revenir à l'ancienne position de curseur **
+<kbd>Ctrl</kbd>+<kbd>U</kbd> : revenir à l'ancienne position de curseur **
 
-`Alt+up / down` : déplace une ligne
+<kbd>Alt</kbd>+<kbd>↑ / ↓</kbd> : déplace une ligne
 
-`Alt+shift+up / down` : copie une ligne
+<kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>↑ / ↓</kbd> : copie une ligne
 
-`Ctrl+K V` (mieux) ou `Ctrl+Shift+V` : preview
+<kbd>Ctrl</kbd>+<kbd>K</kbd> <kbd>V</kbd> ou <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>V</kbd> : preview
 
-`Ctrl+Click` ou `F12` : go to definition
+<kbd>Ctrl</kbd>+<kbd>Click</kbd> ou <kbd>F12</kbd> : go to definition
 
-`Ctrl+:` : ajoute/retire commentaire **
+<kbd>Ctrl</kbd>+<kbd>:</kbd> : ajoute/retire commentaire **
 
-`Ctrl+*`: split screen **
+<kbd>Ctrl</kbd>+<kbd>*</kbd>: split screen **
 
-`Ctrl+Shift+)` : Fold **
+<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>)</kbd> : Fold **
 
-`Ctrl+Shift+^` : Unfold **
+<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>^</kbd> : Unfold **
 
-`F8` : Next problem
+<kbd>F8</kbd> : Next problem
 
 ## Autres
 
-`Ctrl+p` : ouvrir un fichier
+<kbd>Ctrl</kbd>+<kbd>p</kbd> : ouvrir un fichier
 
 ## Sources
 
