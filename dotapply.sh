@@ -2,16 +2,18 @@
 
 # from https://sharats.me/posts/shell-script-best-practices/
 set -o errexit
-# set -o nounset  # TODO fix error on unbound variables
+set -o nounset  # TODO fix error on unbound variables
 set -o pipefail
 # set -o xtrace
 
-echo \
-"=============================
+show_os_info() {
+    echo \
+    "=============================
 unamme: $(uname)
 hostname: $(hostname)
 OS: $OS
 ============================="
+}
 
 DOTFILES_PATH="$HOME/.dotfiles"
 
@@ -37,48 +39,71 @@ install_gh_cli() {
 }
 
 # DETECT OS
-
+#TODO put in a function
 case "$(uname -s)" in
     Linux*)     echo "Linux detected" && linux=true;;
     MINGW*)     echo "Windows detected" && win=true;;
     *)          echo "unknown OS: ${uname}"
 esac
 
-# SETUP
+git_pull() {
+    echo "Git pull..."
+    git -C $DOTFILES_PATH pull
+}
 
-echo "Git pull..."
-git -C $DOTFILES_PATH pull
+load_secrets() {
+    echo "Loading secrets..."
+    . $DOTFILES_PATH/.secrets
+}
 
-echo "Loading secrets..."
-. $DOTFILES_PATH/.secrets
+link_dotfiles() {
+    echo "Link dotfiles..."
+    link_dotfile .bashrc
+    link_dotfile .gitconfig
+    link_dotfile bin
+}
 
-echo "Shell..."
-link_dotfile .bashrc
+setup_windows_git() {
+    if [ $win ]
+    then
+        echo "Git for windows..."
+        git config --global http.sslbackend schannel
+        echo "  schannel configured"
+    fi
+}
 
-# Git
-echo "Git..."
-link_dotfile .gitconfig
-if [ $win ]
-then
-    #TODO check that it doesn't slow git
-    git config --global http.sslbackend schannel
-    echo "  schannel configured"
-fi
 
-# bins
-#TODO: update bins (https://gist.github.com/lukechilds/a83e1d7127b78fef38c2914c4ececc3c)
-echo "Bins..."
-link_dotfile bin
-if [ $win ]
-then
-    setup_autohotkey;
-fi
-if [ $linux ] && ! command -v gh &> /dev/null
-then
-    install_gh_cli;
-    echo "  Github CLI for Linux installed"
-fi
+install_bins() {
+    #TODO: update bins (https://gist.github.com/lukechilds/a83e1d7127b78fef38c2914c4ececc3c)
+    echo "Bins..."
+    if [ $win ]
+    then
+        setup_autohotkey;
+    fi
+    if [ $linux ] && ! command -v gh &> /dev/null
+    then
+        install_gh_cli;
+        echo "  Github CLI for Linux installed"
+    fi
+}
 
-# clean
-unset -f link_dotfile
-unset -f setup_autohotkey
+help() {
+    echo "$0 <task> <args>"
+    echo "Tasks:"
+    compgen -A function | cat -n
+}
+
+default() {
+    dotapply
+}
+
+dotapply() {
+    show_os_info
+    git_pull
+    load_secrets
+    link_dotfiles
+    setup_windows_git
+    install_bins
+}
+
+"${@:-default}"
