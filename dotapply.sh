@@ -37,7 +37,7 @@ show_os_info() {
     "=============================
 unamme: $(uname)
 hostname: $(hostname)
-OS: $OS
+OS: ${OS:-UNDEFINED}
 ============================="
 }
 
@@ -69,7 +69,7 @@ link_dotfiles() {
 }
 
 setup_windows_git() {
-    if [ $win ]
+    if [ "$win" = true ]
     then
         echo "Git for windows..."
         git config --global http.sslbackend schannel
@@ -80,11 +80,11 @@ setup_windows_git() {
 install_bins() {
     #TODO: update bins (https://gist.github.com/lukechilds/a83e1d7127b78fef38c2914c4ececc3c)
     echo "Bins..."
-    if [ $win ]
+    if [ "$win" = true ]
     then
         _setup_autohotkey;
     fi
-    if [ $linux ] && ! command -v gh &> /dev/null
+    if [ "$linux" = true ] && ! command -v gh &> /dev/null
     then
         _install_gh_cli;
         echo "  Github CLI for Linux installed"
