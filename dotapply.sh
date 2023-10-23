@@ -2,7 +2,7 @@
 
 # from https://sharats.me/posts/shell-script-best-practices/
 set -o errexit
-set -o nounset  # TODO fix error on unbound variables
+# set -o nounset  # TODO fix error on unbound variables
 set -o pipefail
 # set -o xtrace
 
@@ -38,13 +38,13 @@ install_gh_cli() {
     && sudo apt install gh -y
 }
 
-# DETECT OS
-#TODO put in a function
-case "$(uname -s)" in
-    Linux*)     echo "Linux detected" && linux=true;;
-    MINGW*)     echo "Windows detected" && win=true;;
-    *)          echo "unknown OS: ${uname}"
-esac
+detect_os() {
+    case "$(uname -s)" in
+        Linux*)     echo "Linux detected" && linux=true;;
+        MINGW*)     echo "Windows detected" && win=true;;
+        *)          echo "unknown OS: ${uname}"
+    esac
+}
 
 git_pull() {
     echo "Git pull..."
@@ -99,6 +99,7 @@ default() {
 
 dotapply() {
     show_os_info
+    detect_os
     git_pull
     load_secrets
     link_dotfiles
