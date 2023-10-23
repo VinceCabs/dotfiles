@@ -2,7 +2,7 @@
 
 # from https://sharats.me/posts/shell-script-best-practices/
 set -o errexit
-# set -o nounset  # TODO fix error on unbound variables
+set -o nounset
 set -o pipefail
 # set -o xtrace
 
@@ -39,6 +39,8 @@ install_gh_cli() {
 }
 
 detect_os() {
+    linux=false
+    win=false
     case "$(uname -s)" in
         Linux*)     echo "Linux detected" && linux=true;;
         MINGW*)     echo "Windows detected" && win=true;;
