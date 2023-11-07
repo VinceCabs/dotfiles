@@ -150,18 +150,19 @@ ExtractAppTitle(FullTitle)
 ***********************************
 */
 
-Capslock & r:: OpenOrShowAppBasedOnWindowTitle("Calendrier", "Outlook:calendar")
 Capslock & e:: OpenOrShowAppBasedOnWindowTitle("Boîte de réception", "Outlook")
+Capslock & r:: OpenOrShowAppBasedOnWindowTitle("Calendrier", "Outlook:calendar")
 Capslock & c:: 
 Capslock & t::
     OpenOrShowAppBasedOnWindowTitle("Chrome", "Chrome")
     return
 ; TODO variabilize AppData folder
-Capslock & f:: OpenOrShowAppBasedOnWindowTitle("Spotify", "C:\Users\MD1116\AppData\Roaming\Spotify\Spotify.exe")
+
 Capslock & d:: OpenOrShowAppBasedOnAppModelUserID("Horloge","Microsoft.WindowsAlarms_8wekyb3d8bbwe!App" )
-Capslock & v:: OpenOrShowAppBasedOnWindowTitle("Visual Studio Code", "C:\Users\MD1116\AppData\Local\Programs\Microsoft VS Code\Code.exe")
+Capslock & f:: OpenOrShowAppBasedOnWindowTitle("Spotify", "C:\Users\MD1116\AppData\Roaming\Spotify\Spotify.exe")
 Capslock & g:: OpenOrShowAppBasedOnWindowTitle("Microsoft Teams", "C:\Users\MD1116\AppData\Local\Microsoft\Teams\Update.exe --processStart 'Teams.exe' --process-start-args '--profile=AAD'")
 Capslock & x:: OpenOrShowAppBasedOnWindowTitle("Explorateur", "C:\Windows\explorer.exe")
+Capslock & v:: OpenOrShowAppBasedOnWindowTitle("Visual Studio Code", "C:\Users\MD1116\AppData\Local\Programs\Microsoft VS Code\Code.exe")
 
 CapsLock & h:: MsgBox, 
     ( Join LTrim C
