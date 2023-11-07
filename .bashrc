@@ -11,7 +11,7 @@ prepend_path() {
 }
 
 # aliases
-alias ll='ls -alF'
+alias ll='ls -alhF'
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
