@@ -158,15 +158,17 @@ Capslock & t::
     return
 ; TODO variabilize AppData folder
 Capslock & f:: OpenOrShowAppBasedOnWindowTitle("Spotify", "C:\Users\MD1116\AppData\Roaming\Spotify\Spotify.exe")
+Capslock & d:: OpenOrShowAppBasedOnAppModelUserID("Horloge","Microsoft.WindowsAlarms_8wekyb3d8bbwe!App" )
 Capslock & v:: OpenOrShowAppBasedOnWindowTitle("Visual Studio Code", "C:\Users\MD1116\AppData\Local\Programs\Microsoft VS Code\Code.exe")
 Capslock & g:: OpenOrShowAppBasedOnWindowTitle("Microsoft Teams", "C:\Users\MD1116\AppData\Local\Microsoft\Teams\Update.exe --processStart 'Teams.exe' --process-start-args '--profile=AAD'")
 Capslock & x:: OpenOrShowAppBasedOnWindowTitle("Explorateur", "C:\Windows\explorer.exe")
 
 CapsLock & h:: MsgBox, 
     ( Join LTrim C
-        <E> Boîte de réception `t <R> Calendrier `t`t <T> Chrome`n
-        <F> Spotify `t`t <G> Microsoft Teams `t <H> Help`n
-        <X> Explorer `t`t <C> Chrome `t`t <V> VS Code`n
+        <E> Boîte de réception `t <R> Calendrier `t <T> Chrome`n
+        <D> Timer `t`t <F> Spotify `t <G> Microsoft Teams`n
+        <X> Explorer `t`t <C> Chrome `t <V> VS Code`n
+        <H> Help`n
     )
 
 ; Not working:
