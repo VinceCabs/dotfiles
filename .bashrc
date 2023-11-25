@@ -22,8 +22,9 @@ alias activate="source .venv/Scripts/activate ; source .venv/bin/activate"  # bo
 alias cl="clear"
 alias gauth="gcloud auth login && gcloud auth application-default login"
 
-# sync dotfiles
+# my utils
 alias dotapply="sh $HOME/.dotfiles/dotapply.sh"
+alias tasks="sh $HOME/.dotfiles/tasks.sh"
 
 # add .bashrc_local if exists
 [[ -f $HOME/.bashrc_local ]] && . $HOME/.bashrc_local
