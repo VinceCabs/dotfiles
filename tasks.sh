@@ -9,7 +9,6 @@ load_secrets() {
 }
 
 rclone_setup() {
-    # TODO document .secrets
     load_secrets
     rclone config create \
         $RCLONE_REMOTE_NAME \
