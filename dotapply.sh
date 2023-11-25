@@ -104,7 +104,6 @@ default() {
 # MAIN
 dotapply() {
     show_os_info
-    detect_os
     git_pull
     load_secrets
     link_dotfiles
@@ -112,4 +111,6 @@ dotapply() {
     install_bins
 }
 
+# run default() or run function passed as argument
+detect_os
 "${@:-default}"
