@@ -20,6 +20,12 @@ rclone_setup() {
         bucket_policy_only=true
 }
 
+# UTILS
+
+_link_dotfile() {
+    rm -rf ~/$1 && ln -s -f $DOTFILES_PATH/$1 ~/$1
+}
+
 help() {
     echo "$0 <task> <args>"
     echo "Tasks:"
@@ -30,4 +36,5 @@ default() {
     help
 }
 
+_link_dotfile tasks.sh
 "${@:-default}"
