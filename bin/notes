@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 
-# Only for Windows (TODO)
+NOTES_URL="https://github.com/VinceCabs/dotfiles/tree/master/notes/$1"
+
 if command -v start &> /dev/null
 then
-    start "https://github.com/VinceCabs/dotfiles/tree/master/notes/$1"
+    start $NOTES_URL  # Windows
 else
-    echo "Windows or browser not found"
+    xdg-open $NOTES_URL  # Linux
 fi
