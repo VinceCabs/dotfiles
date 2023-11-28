@@ -18,13 +18,15 @@ alias ....="cd ../../.."
 alias g="git"
 alias gsutil="gsutil.cmd"
 alias python3="python"
-alias activate="source .venv/Scripts/activate ; source .venv/bin/activate"  # both exist
+alias activate="source .venv/Scripts/activate; source .venv/bin/activate"  # both exist
 alias cl="clear"
 alias gauth="gcloud auth login && gcloud auth application-default login"
 
 # my utils
 alias dotapply="sh $HOME/.dotfiles/dotapply.sh"
-alias tasks="sh $HOME/.dotfiles/tasks.sh"
+alias tasks="sh $HOME/.dotfiles/tasks.sh"  # global tasks
+alias tt="tasks"
+alias t="./tasks.sh"  # local tasks
 
 # add .bashrc_local if exists
 [[ -f $HOME/.bashrc_local ]] && . $HOME/.bashrc_local
