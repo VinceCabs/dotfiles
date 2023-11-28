@@ -63,7 +63,7 @@ load_secrets() {
 
 link_dotfiles() {
     echo "Link dotfiles..."
-    _link_dotfile .bashrc
+    _link_dotfile .bashrc; source $DOTFILES_PATH/.bashrc
     _link_dotfile .gitconfig
     _link_dotfile bin
 }
