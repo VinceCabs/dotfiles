@@ -77,7 +77,20 @@ setup_windows_autohotkey() {
 
 install_bins() {
     #TODO: update bins (https://gist.github.com/lukechilds/a83e1d7127b78fef38c2914c4ececc3c)
-    echo "Bins..."
+    echo "Bins..." 
+    if [ "$win" = true ]
+    then
+        # install packages if scoop present
+        command -v scoop &> /dev/null \
+        && scoop install \
+            nodejs \
+            gh \
+            rclone \
+            yt-dlp \
+            ffmpeg \
+        && echo "  Scoop packages installed" \
+        || echo "  Scoop not installed => install scoop first"
+    fi
     if [ "$linux" = true ] && ! command -v gh &> /dev/null
     then
         _install_gh_cli;
