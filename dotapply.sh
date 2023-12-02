@@ -14,12 +14,6 @@ _link_dotfile() {
     rm -rf ~/$1 && ln -s -f $DOTFILES_PATH/$1 ~/$1
 }
 
-_setup_autohotkey() {
-    cmd "/c start %USERPROFILE%\.dotfiles\bin\AutoHotkeyU64.exe %USERPROFILE%\.dotfiles\bin\ahk_scripts.ahk"
-    cp $DOTFILES_PATH/bin/AutoHotkey.lnk "$APPDATA/Microsoft/Windows/Start Menu/Programs/Startup";
-    echo "  AutoHotkey started and set on startup";
-}
-
 _install_gh_cli() {
     type -p curl >/dev/null || sudo apt install curl -y
     curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
@@ -69,21 +63,21 @@ link_dotfiles() {
 }
 
 setup_windows_git() {
-    if [ "$win" = true ]
-    then
-        echo "Git for windows..."
-        git config --global http.sslbackend schannel
-        echo "  schannel configured"
-    fi
+    echo "Git for windows..."
+    git config --global http.sslbackend schannel
+    echo "  schannel configured"
+}
+
+setup_windows_autohotkey() {
+    echo "AutoHotkey for windows..."
+    cmd "/c start %USERPROFILE%\.dotfiles\bin\AutoHotkeyU64.exe %USERPROFILE%\.dotfiles\bin\ahk_scripts.ahk"
+    cp $DOTFILES_PATH/bin/AutoHotkey.lnk "$APPDATA/Microsoft/Windows/Start Menu/Programs/Startup";
+    echo "  started and set on startup";
 }
 
 install_bins() {
     #TODO: update bins (https://gist.github.com/lukechilds/a83e1d7127b78fef38c2914c4ececc3c)
     echo "Bins..."
-    if [ "$win" = true ]
-    then
-        _setup_autohotkey;
-    fi
     if [ "$linux" = true ] && ! command -v gh &> /dev/null
     then
         _install_gh_cli;
@@ -107,7 +101,11 @@ dotapply() {
     git_pull
     load_secrets
     link_dotfiles
-    setup_windows_git
+    if [ "$win" = true ]
+    then
+        setup_windows_git
+        setup_windows_autohotkey;
+    fi
     install_bins
 }
 
