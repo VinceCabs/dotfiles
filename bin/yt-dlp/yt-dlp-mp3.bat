@@ -7,6 +7,6 @@ cd %TARGET_PATH%
 set /p URL="enter video's URL : "
 
 @echo on
-yt-dlp.exe --extract-audio --audio-format mp3 --ignore-errors -o "%%(title)s.%%(ext)s" %URL%
+yt-dlp  --no-check-certificate --extract-audio --audio-format mp3 --ignore-errors -o "%%(title)s.%%(ext)s" %URL%
 
 PAUSE

@@ -7,6 +7,6 @@ cd %TARGET_PATH%
 set /p URL="enter video's URL : "
 
 @echo on
-yt-dlp.exe --format mp4 --output "%%(title)s.%%(ext)s" %URL%
+yt-dlp  --no-check-certificate --format mp4 --output "%%(title)s.%%(ext)s" %URL%
 
 PAUSE
