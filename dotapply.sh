@@ -20,7 +20,13 @@ _install_gh_cli() {
     && sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
     && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
     && sudo apt update \
-    && sudo apt install gh -y
+    && sudo apt install gh -y \
+    && echo "  Github CLI for Linux installed"
+}
+
+_install_scoop() {
+    command -v scoop &> /dev/nullecho \
+    || powershell -ExecutionPolicy RemoteSigned -File scoop_install.ps1
 }
 
 # MAIN TASKS
@@ -81,20 +87,18 @@ install_bins() {
     if [ "$win" = true ]
     then
         # install packages if scoop present
-        command -v scoop &> /dev/null \
-        && scoop install \
+        _install_scoop
+        scoop install \
             nodejs \
             gh \
             rclone \
             yt-dlp \
             ffmpeg \
-        && echo "  Scoop packages installed" \
-        || echo "  Scoop not installed => install scoop first"
+        && echo "  Scoop packages installed"
     fi
     if [ "$linux" = true ] && ! command -v gh &> /dev/null
     then
         _install_gh_cli;
-        echo "  Github CLI for Linux installed"
     fi
 }
 
