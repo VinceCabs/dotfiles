@@ -1,4 +1,11 @@
 #!/usr/bin/env bash
+
+# from https://sharats.me/posts/shell-script-best-practices/
+set -o errexit
+set -o nounset
+set -o pipefail
+# set -o xtrace
+
 DOTFILES_PATH="$HOME/.dotfiles"
 RCLONE_REMOTE_NAME=gcp_perso
 TIMEFORMAT="Task completed in %3lR"
