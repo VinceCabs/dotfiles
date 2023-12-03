@@ -1,5 +1,4 @@
 DOTFILES_PATH="$HOME/.dotfiles"
-FAV_GCP_PROJECT="engie-b2c-cloud"
 
 . $DOTFILES_PATH/.secrets
 

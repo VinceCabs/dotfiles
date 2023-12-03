@@ -15,6 +15,12 @@ sh ./dotapply.sh
 
 Run `tasks` or  `t` to show available tasks.
 
+## GCP Cloudshell favorite project
+
+```sh
+echo FAV_GCP_PROJECT=XXX >> .secrets  
+```
+
 ## Rclone backup
 
 The following enables Rclone backup of any local source to a Google Storage location.
