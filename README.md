@@ -17,6 +17,8 @@ Run `tasks` or  `t` to show available tasks.
 
 ## GCP Cloudshell favorite project
 
+Set your favorite project for each session.
+
 ```sh
 echo FAV_GCP_PROJECT=XXX >> .secrets  
 ```
