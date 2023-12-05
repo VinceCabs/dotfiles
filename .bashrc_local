@@ -25,7 +25,7 @@ alias gauth="gcloud auth login && gcloud auth application-default login"
 alias dotapply="sh $HOME/.dotfiles/dotapply.sh"
 alias tasks="sh $HOME/.dotfiles/tasks.sh"  # global tasks
 alias tt="tasks"
-alias t="./tasks.sh"  # local tasks
+alias t="sh ./tasks.sh"  # local tasks
 
 # add Google Cloushell bashrc and set GCP project
 if [ -f "/google/devshell/bashrc.google" ]; then
