@@ -25,7 +25,7 @@ _install_gh_cli() {
 }
 
 _install_scoop() {
-    command -v scoop &> /dev/nullecho \
+    command -v scoop &> /dev/null \
     || powershell -ExecutionPolicy RemoteSigned -File scoop_install.ps1
 }
 
