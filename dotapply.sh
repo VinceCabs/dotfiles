@@ -63,7 +63,15 @@ load_secrets() {
 
 link_dotfiles() {
     echo "Link dotfiles..."
-    _link_dotfile .bashrc; source $DOTFILES_PATH/.bashrc
+    # create .bashrc if not exists and 
+    [[ -f ./.bashrc ]] || touch ~/.bashrc
+    # add snippet to source .bashrc_local if not  present
+    if ! grep ".bashrc_local" ~/.bashrc 1> /dev/null
+    then
+        cat .bashrc.snippet >> ~/.bashrc
+    fi
+    # links
+    _link_dotfile .bashrc_local; source ~/.bashrc
     _link_dotfile .gitconfig
     _link_dotfile bin
 }
