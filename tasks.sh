@@ -10,12 +10,14 @@ DOTFILES_PATH="$HOME/.dotfiles"
 RCLONE_REMOTE_NAME=gcp_perso
 TIMEFORMAT="Task completed in %3lR"
 
-load_secrets() {
+###### TASKS
+
+load_secrets() {  ## load secrets from .secrets file
     echo "Loading secrets..."
     . $DOTFILES_PATH/.secrets
 }
 
-rclone_setup() {
+rclone_setup() {  ## setup rclone (requires GCP project number in .secrets file)
     load_secrets
     rclone config create \
         $RCLONE_REMOTE_NAME \
@@ -26,8 +28,7 @@ rclone_setup() {
         bucket_policy_only=true
 }
 
-rclone_backup() {
-    # accepts flags as arguments (ex: `--dry-run -vv`)
+rclone_backup() {  ## launch backup (requires filter file, accepts arguments ex: `--dry-run -vv`)
     # need a `rclone_filter_list.txt` file located in source, remove if you want to backup all
     load_secrets
     rclone sync --progress $@ \
@@ -36,16 +37,18 @@ rclone_backup() {
         $RCLONE_REMOTE_NAME:$RCLONE_GOOGLE_STORAGE_BUCKET
 }
 
-# UTILS
+###### UTILS
 
 _link_dotfile() {
     rm -rf ~/$1 && ln -s -f $DOTFILES_PATH/$1 ~/$1
 }
 
-help() {
-    echo "$0 <task> <args>"
-    echo "Tasks:"
-    compgen -A function | grep -v "^_" | cat -n
+help() {  ## print this help (default)
+	echo "$0 <task> <args>"
+	grep -E '^([a-zA-Z_-]+\(\) {.*?## .*|######* .+)$$' $0 \
+		| sed 's/######* \(.*\)/\n               \1/g' \
+		| sed 's/\([a-zA-Z-]\+\)()/\1/' \
+		| awk 'BEGIN {FS = "{.*?## "}; {printf "\033[93m%-30s\033[0m %s\033[0m\n", $1, $2}'
 }
 
 default() {
