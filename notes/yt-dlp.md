@@ -1,5 +1,7 @@
 # yt-dlp
 
+[Official doc](https://github.com/yt-dlp/yt-dlp?tab=readme-ov-file#usage-and-options)
+
 Update
 
 `yt-dlp --update`
