@@ -3,7 +3,7 @@
         "editor.defaultFormatter": "vscode.html-language-features"
     },
     "[javascript]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features"
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[json]": {
         "editor.defaultFormatter": "vscode.json-language-features"
@@ -15,17 +15,14 @@
         "editor.rulers": [
             88,
             100
-        ]
-    },
-    "[sql]": {
-        "editor.defaultFormatter": "adpyke.vscode-sql-formatter"
+        ],
+        "editor.formatOnType": true,
+        "editor.defaultFormatter": "ms-python.black-formatter"
     },
     "conventionalCommits.autoCommit": false,
     "conventionalCommits.emojiFormat": "emoji",
-    "diffEditor.ignoreTrimWhitespace": false,
     "diffEditor.renderSideBySide": true,
     "editor.bracketPairColorization.enabled": true,
-    "editor.columnSelection": false,
     "editor.multiCursorModifier": "ctrlCmd",
     "editor.renderWhitespace": "trailing",
     "editor.suggestSelection": "first",
@@ -39,23 +36,41 @@
     },
     "problems.showCurrentInStatus": true,
     "projectManager.git.baseFolders": [
-        "E:\\Dev\\Github_VinceCabs",
-        "${env:HOME}\\Dev\\Github_VinceCabs"
+        "${env:HOME}\\dev",
+        "${env:HOME}\\Dev",
+        "D:\\Dev"
     ],
     "python.analysis.completeFunctionParens": true,
-    "python.formatting.provider": "black",
     "python.languageServer": "Pylance",
-    "python.linting.enabled": true,
     "python.terminal.activateEnvInCurrentTerminal": true,
     "security.workspace.trust.untrustedFiles": "open",
     "terminal.integrated.defaultProfile.windows": "Git Bash",
+    "terminal.integrated.allowChords": false,
+    "terminal.integrated.drawBoldTextInBrightColors": false,
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "workbench.editorAssociations": {
         "*.ipynb": "jupyter-notebook"
     },
-    "workbench.iconTheme": "material-icon-theme",
-    // Jenkins validate
     "jenkins.pipeline.linter.connector.pass": "****************",
     "jenkins.pipeline.linter.connector.url": "****************",
     "jenkins.pipeline.linter.connector.user": "****************",
+    "settingsSync.ignoredSettings": [
+        "jenkins.pipeline.linter.connector.pass",
+        "jenkins.pipeline.linter.connector.url",
+        "jenkins.pipeline.linter.connector.user"
+    ],
+    "settingsSync.ignoredExtensions": [],
+    "markdown.extension.toc.levels": "1..3",
+    "cloudcode.project": "****************",
+    "[yaml]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "cloudcode.duetAI.enable": true,
+    "cloudcode.duetAI.languages": [
+        "python",
+        "javascript",
+        "shellscript"
+    ],
+    "cloudcode.duetAI.project": "****************",
+    "redhat.telemetry.enabled": false
 }
