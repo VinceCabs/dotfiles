@@ -13,16 +13,18 @@ sh ./dotapply.sh
 
 [`tasks.sh`](tasks.sh) provides a task manager, inspired from (great) [Taskfile](https://github.com/adriancooney/Taskfile).
 
-Run `tasks` or  `t` to show available tasks.
+Run `tasks` or  `t` to show available tasks :
 
-`tasks get_task_template` : get a tasks.sh template in local directory (useful)
+![example of available task as shown in bash](img/tasks_help.png)
+
+`tasks get_task_template` : get a *tasks.sh* template in local directory (useful)
 
 ## GCP Cloudshell favorite project
 
 Set your favorite project for each session.
 
 ```sh
-echo FAV_GCP_PROJECT=XXX >> .secrets  
+echo FAV_GCP_PROJECT=XXX >> .secrets
 ```
 
 ## Rclone backup
