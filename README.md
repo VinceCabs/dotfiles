@@ -15,6 +15,8 @@ sh ./dotapply.sh
 
 Run `tasks` or  `t` to show available tasks.
 
+`tasks get_task_template` : get a tasks.sh template in local directory (useful)
+
 ## GCP Cloudshell favorite project
 
 Set your favorite project for each session.

@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+# from https://sharats.me/posts/shell-script-best-practices/
+set -o errexit
+set -o nounset
+set -o pipefail
+# set -o xtrace
+
+DOTFILES_PATH="$HOME/.dotfiles"
+TIMEFORMAT="Task completed in %3lR"
+
+###### TASKS
+
+task() {  ## this is a task
+    echo "Task 1"
+}
+
+###### UTILS
+
+help() {  ## print this help (default)
+	echo "$0 <task> <args>"
+	grep -E '^([a-zA-Z_-]+\(\) {.*?## .*|######* .+)$$' $0 \
+		| sed 's/######* \(.*\)/\n               \1/g' \
+		| sed 's/\([a-zA-Z-]\+\)()/\1/' \
+		| awk 'BEGIN {FS = "{.*?## "}; {printf "\033[93m%-30s\033[0m %s\033[0m\n", $1, $2}'
+}
+
+default() {
+    help
+}
+
+"${@:-default}"

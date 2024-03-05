@@ -37,6 +37,10 @@ rclone_backup() {  ## launch backup (requires filter file, accepts arguments ex:
         $RCLONE_REMOTE_NAME:$RCLONE_GOOGLE_STORAGE_BUCKET
 }
 
+get_tasks_template() {  ## copy tasks.sh template to current directory
+    cp $DOTFILES_PATH/tasks.sh.template ./tasks.sh
+}
+
 ###### UTILS
 
 _link_dotfile() {
