@@ -102,6 +102,9 @@ install_bins() {
             rclone \
             yt-dlp \
             ffmpeg \
+            docker \
+            aria2 \
+            bat \
         && echo "  Scoop packages installed"
     fi
     if [ "$linux" = true ] && ! command -v gh &> /dev/null
