@@ -50,3 +50,11 @@ tasks rclone_backup
 ```
 
 *See [`tasks.sh`](tasks.sh) code and [rclone sync](https://rclone.org/commands/rclone_sync/) documentation for more details.*
+
+## TODO
+
+* ollama setup
+  * load favorite models
+* aichat setup
+  * make env var `AICHAT_CONFIG_DIR` work
+  * sync config with [`./aichat`](./aichat/) directory

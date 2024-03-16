@@ -69,7 +69,6 @@ setup_windows_autohotkey() {  ## setup AutoHotkey for windows
 }
 
 install_bins() {  ## install bins (linux and windows)
-    #TODO: update bins (https://gist.github.com/lukechilds/a83e1d7127b78fef38c2914c4ececc3c)
     echo "Bins..." 
     if [ "$win" = true ]
     then
@@ -85,6 +84,7 @@ install_bins() {  ## install bins (linux and windows)
             aria2 \
             bat \
             ollama \
+            aichat
         && echo "  Scoop packages installed"
     fi
     if [ "$linux" = true ] && ! command -v gh &> /dev/null
