@@ -84,6 +84,7 @@ install_bins() {  ## install bins (linux and windows)
             docker \
             aria2 \
             bat \
+            ollama \
         && echo "  Scoop packages installed"
     fi
     if [ "$linux" = true ] && ! command -v gh &> /dev/null
