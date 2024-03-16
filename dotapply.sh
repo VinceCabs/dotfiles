@@ -84,7 +84,7 @@ install_bins() {  ## install bins (linux and windows)
             aria2 \
             bat \
             ollama \
-            aichat
+            aichat \
         && echo "  Scoop packages installed"
     fi
     if [ "$linux" = true ] && ! command -v gh &> /dev/null
