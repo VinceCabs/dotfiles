@@ -55,6 +55,7 @@ tasks rclone_backup
 
 * ollama setup
   * load favorite models
+  * ollama serve (at startup or on demand?)
 * aichat setup
   * make env var `AICHAT_CONFIG_DIR` work
   * sync config with [`./aichat`](./aichat/) directory
