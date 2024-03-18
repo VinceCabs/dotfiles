@@ -68,6 +68,16 @@ setup_windows_autohotkey() {  ## setup AutoHotkey for windows
     echo "  started and set on startup";
 }
 
+setup_windows_aichat() {  ## setup Aichat for windows
+    load_secrets
+    echo "aichat for windows..."
+    AICHAT_CONFIG_DIR=$APPDATA/aichat
+    cp $DOTFILES_PATH/aichat/* $AICHAT_CONFIG_DIR
+    # add secrets: region and project id in config
+    sed -i "s/{REGION}/$AICHAT_GCP_REGION/g" $AICHAT_CONFIG_DIR/config.yaml
+    sed -i "s/{PROJECT_ID}/$AICHAT_GCP_PROJECT_ID/g" $AICHAT_CONFIG_DIR/config.yaml
+}
+
 install_bins() {  ## install bins (linux and windows)
     echo "Bins..." 
     if [ "$win" = true ]
@@ -136,6 +146,7 @@ dotapply() {  ## apply dotfiles (main)
     then
         setup_windows_git
         setup_windows_autohotkey;
+        setup_windows_aichat
     fi
     install_bins
 }

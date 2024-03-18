@@ -1,0 +1,12 @@
+model: vertexai:gemini-1.0-pro  # default model
+
+clients:
+
+  - type: vertexai
+    api_base: https://{REGION}-aiplatform.googleapis.com/v1/projects/{PROJECT_ID}/locations/{REGION}/publishers/google/models
+
+  - type: ollama
+    api_base: http://localhost:11434
+    models:
+    - name: llama2
+      max_input_tokens: null
