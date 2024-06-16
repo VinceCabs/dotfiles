@@ -3,6 +3,8 @@ model: vertexai:gemini-1.0-pro  # default model
 clients:
 
   - type: vertexai
+    project_id: {PROJECT_ID}                      # ENV: {client}_PROJECT_ID
+    location: {REGION}                            # ENV: {client}_LOCATION
     api_base: https://{REGION}-aiplatform.googleapis.com/v1/projects/{PROJECT_ID}/locations/{REGION}/publishers/google/models
 
   - type: ollama
