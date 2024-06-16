@@ -1,10 +1,16 @@
-model: vertexai:gemini-1.0-pro  # default model
+# model: vertexai:gemini-1.0-pro  # default model
+model: openai:gpt-4o
 
 clients:
 
+
   - type: vertexai
-    project_id: {PROJECT_ID}                      # ENV: {client}_PROJECT_ID
-    location: {REGION}                            # ENV: {client}_LOCATION
+    project_id: {VERTEXAI_PROJECT_ID}
+    location: {VERTEXAI_LOCATION}
+
+  - type: openai
+    api_key: {OPENAI_API_KEY}
+    api_base: https://api.openai.com/v1 
 
   - type: ollama
     api_base: http://localhost:11434

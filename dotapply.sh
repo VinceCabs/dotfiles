@@ -75,8 +75,9 @@ setup_windows_aichat() {  ## setup Aichat for windows
     AICHAT_CONFIG_DIR=$APPDATA/aichat
     cp $DOTFILES_PATH/aichat/* $AICHAT_CONFIG_DIR
     # add secrets: region and project id in config
-    sed -i "s/{REGION}/$VERTEXAI_LOCATION/g" $AICHAT_CONFIG_DIR/config.yaml
-    sed -i "s/{PROJECT_ID}/$VERTEXAI_PROJECT_ID/g" $AICHAT_CONFIG_DIR/config.yaml
+    sed -i "s/{VERTEXAI_LOCATION}/$VERTEXAI_LOCATION/g" $AICHAT_CONFIG_DIR/config.yaml
+    sed -i "s/{VERTEXAI_PROJECT_ID}/$VERTEXAI_PROJECT_ID/g" $AICHAT_CONFIG_DIR/config.yaml
+    sed -i "s/{OPENAI_API_KEY}/$OPENAI_API_KEY/g" $AICHAT_CONFIG_DIR/config.yaml
 }
 
 install_bins() {  ## install bins (linux and windows)
