@@ -71,11 +71,12 @@ setup_windows_autohotkey() {  ## setup AutoHotkey for windows
 setup_windows_aichat() {  ## setup Aichat for windows
     load_secrets
     echo "aichat for windows..."
+    # copy config templates to config directory
     AICHAT_CONFIG_DIR=$APPDATA/aichat
     cp $DOTFILES_PATH/aichat/* $AICHAT_CONFIG_DIR
     # add secrets: region and project id in config
-    sed -i "s/{REGION}/$AICHAT_GCP_REGION/g" $AICHAT_CONFIG_DIR/config.yaml
-    sed -i "s/{PROJECT_ID}/$AICHAT_GCP_PROJECT_ID/g" $AICHAT_CONFIG_DIR/config.yaml
+    sed -i "s/{REGION}/$VERTEXAI_LOCATION/g" $AICHAT_CONFIG_DIR/config.yaml
+    sed -i "s/{PROJECT_ID}/$VERTEXAI_PROJECT_ID/g" $AICHAT_CONFIG_DIR/config.yaml
 }
 
 install_bins() {  ## install bins (linux and windows)
