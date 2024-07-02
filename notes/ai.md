@@ -4,6 +4,8 @@
 
 See https://huggingface.co/datasets/fka/awesome-chatgpt-prompts/
 
+see https://docs.anthropic.com/en/prompt-library/library (prompt library from Anthropic)
+
 ### Teachers
 
 ```
