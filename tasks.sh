@@ -11,6 +11,7 @@ RCLONE_REMOTE_NAME=gcp_perso
 TIMEFORMAT="Task completed in %3lR"
 
 ###### TASKS
+# inspired from (great): https://github.com/adriancooney/Taskfile
 
 load_secrets() {  ## load secrets from .secrets file
     echo "Loading secrets..."
@@ -37,9 +38,17 @@ rclone_backup() {  ## launch backup (requires filter file, accepts arguments ex:
         $RCLONE_REMOTE_NAME:$RCLONE_GOOGLE_STORAGE_BUCKET
 }
 
+<<<<<<< HEAD
+###### UTILS
+=======
+get_template() {  ## copy tasks.sh template to current directory
+    cp $DOTFILES_PATH/tasks.sh.template ./tasks.sh
+}
+>>>>>>> 17882df57326a368efd04c46f4812a54a7e9d863
+
 ###### UTILS
 
-_link_dotfile() {
+_link_dotfile() {  # refresh and link a dotfile or a directory
     rm -rf ~/$1 && ln -s -f $DOTFILES_PATH/$1 ~/$1
 }
 

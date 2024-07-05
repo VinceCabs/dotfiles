@@ -13,14 +13,18 @@ sh ./dotapply.sh
 
 [`tasks.sh`](tasks.sh) provides a task manager, inspired from (great) [Taskfile](https://github.com/adriancooney/Taskfile).
 
-Run `tasks` or  `t` to show available tasks.
+Run `tasks` or  `t` to show available tasks :
+
+![example of available task as shown in bash](img/tasks_help.png)
+
+`tasks get_task_template` : get a *tasks.sh* template in local directory (useful)
 
 ## GCP Cloudshell favorite project
 
 Set your favorite project for each session.
 
 ```sh
-echo FAV_GCP_PROJECT=XXX >> .secrets  
+echo FAV_GCP_PROJECT=XXX >> .secrets
 ```
 
 ## Rclone backup
@@ -46,3 +50,12 @@ tasks rclone_backup
 ```
 
 *See [`tasks.sh`](tasks.sh) code and [rclone sync](https://rclone.org/commands/rclone_sync/) documentation for more details.*
+
+## TODO
+
+* ollama setup
+  * load favorite models
+  * ollama serve (at startup or on demand?)
+* aichat setup
+  * make env var `AICHAT_CONFIG_DIR` work
+  * sync config with [`./aichat`](./aichat/) directory
