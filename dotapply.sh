@@ -100,9 +100,10 @@ install_bins() {  ## install bins (linux and windows)
             delta \
         && echo "  Scoop packages installed"
     fi
-    if [ "$linux" = true ] && ! command -v gh &> /dev/null
+    if [ "$linux" = true ]
     then
         _install_gh_cli;
+        _install_delta;
     fi
 }
 
@@ -113,13 +114,29 @@ _link_dotfile() {  # refresh and link a dotfile or a directory
 }
 
 _install_gh_cli() {  # install Github CLI for Linux
-    type -p curl >/dev/null || sudo apt install curl -y
-    curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
-    && sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
-    && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
-    && sudo apt update \
-    && sudo apt install gh -y \
-    && echo "  Github CLI for Linux installed"
+    if ! command -v gh &> /dev/null
+    then
+        echo " ...installing Github CLI"
+        type -p curl >/dev/null || sudo apt install curl -y
+        curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
+        && sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
+        && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
+        && sudo apt update \
+        && sudo apt install gh -y \
+        && echo "  ...Github CLI for Linux installed"
+    fi
+}
+
+_install_delta() {  # install delta diff tool for Linux
+    DELTA_VERSION="0.18.2"
+    if ! command -v delta &> /dev/null
+    then
+        echo " ...installing delta"
+        wget  -P /tmp/ "https://github.com/dandavison/delta/releases/download/${DELTA_VERSION}/git-delta_${DELTA_VERSION}_amd64.deb"
+        sudo dpkg -i /tmp/git-delta_${DELTA_VERSION}_amd64.deb
+        rm /tmp/git-delta_${DELTA_VERSION}_amd64.deb
+        echo "  ...delta for Linux installed"
+    fi
 }
 
 _install_scoop() {  # install scoop for Windows
