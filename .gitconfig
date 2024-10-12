@@ -7,10 +7,10 @@
 
 [core]
 	editor = code --wait
-	pager = diff-so-fancy | less --tabs=4 -RFX
+	pager = delta --diff-so-fancy
 
 [interactive]
-	diffFilter = diff-so-fancy --patch
+	pager = delta --diff-so-fancy
 
 [credential]
 	helper = store
@@ -72,20 +72,18 @@
   # print TODO (short)
   td = "! git grep --extended-regexp -I --line-number --count 'TODO|FIXME'"
 
-[color]
-	ui = true
+[delta]
+  navigate = true    # use n and N to move between diff sections
+  side-by-side = true
+  # line-numbers-left-format = ""
+  # line-numbers-right-format = "│ "
 
-[color "diff-highlight"]
-	oldNormal = red bold
-	oldHighlight = red bold 52
-	newNormal = green bold
-	newHighlight = green bold 22
+  # delta detects terminal colors automatically; set one of these to disable auto-detection
+  # dark = true
+  # light = true
 
-[color "diff"]
-	meta = 11
-	frag = magenta bold
-	func = 146 bold
-	commit = yellow bold
-	old = red bold
-	new = green bold
-	whitespace = red reverse
+[merge]
+  conflictstyle = diff3
+
+[diff]
+  colorMoved = default

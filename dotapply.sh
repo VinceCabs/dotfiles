@@ -97,6 +97,7 @@ install_bins() {  ## install bins (linux and windows)
             bat \
             ollama \
             aichat \
+            delta \
         && echo "  Scoop packages installed"
     fi
     if [ "$linux" = true ] && ! command -v gh &> /dev/null
