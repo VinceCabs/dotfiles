@@ -29,7 +29,7 @@ none            128G   92G   37G  72% /dev
 Usage:
 
 ```sh
-$ du -h --max-depth=1
+$ du -h --max-depth=1  # or short: du -hd 1
 12K     ./d
 4.0K    ./c
 20K     .
