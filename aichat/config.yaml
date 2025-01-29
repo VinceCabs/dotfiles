@@ -1,5 +1,5 @@
-# model: vertexai:gemini-1.0-pro  # default model
-model: openai:gpt-4o
+model: vertexai:gemini-1.5-flash  # default model
+# model: openai:gpt-4o
 
 clients:
 
