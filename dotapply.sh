@@ -71,7 +71,8 @@ setup_windows_autohotkey() {  ## setup AutoHotkey for windows
 setup_windows_aichat() {  ## setup Aichat for windows
     load_secrets
     echo "aichat for windows..."
-    # copy config templates to config directory
+    # copy config templates to config directory (create if not exists)
+    mkdir -p $APPDATA/aichat
     AICHAT_CONFIG_DIR=$APPDATA/aichat
     cp $DOTFILES_PATH/aichat/* $AICHAT_CONFIG_DIR
     # add secrets: region and project id in config
@@ -162,13 +163,13 @@ dotapply() {  ## apply dotfiles (main)
     git_pull
     load_secrets
     link_dotfiles
+    install_bins
     if [ "$win" = true ]
     then
         setup_windows_git
         setup_windows_autohotkey;
         setup_windows_aichat
     fi
-    install_bins
 }
 
 # run default() or run function passed as argument
