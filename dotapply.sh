@@ -86,6 +86,7 @@ install_bins() {  ## install bins (linux and windows)
     if [ "$win" = true ]
     then
         # install packages if scoop present
+        _install_uv
         _install_scoop
         scoop install \
             nodejs \
@@ -141,8 +142,15 @@ _install_delta() {  # install delta diff tool for Linux
 }
 
 _install_scoop() {  # install scoop for Windows
-    command -v scoop &> /dev/null \
-    || powershell -ExecutionPolicy RemoteSigned -File scoop_install.ps1
+    if ! command -v scoop &> /dev/null; then
+        powershell -ExecutionPolicy ByPass -c "irm get.scoop.sh | iex"
+    fi
+}
+
+_install_uv() {  # install uv for Windows
+    if ! command -v uv &> /dev/null; then
+        powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+    fi
 }
 
 help() {  ## print this help (default)
