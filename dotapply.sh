@@ -106,6 +106,7 @@ install_bins() {  ## install bins (linux and windows)
     then
         _install_gh_cli;
         _install_delta;
+        _install_uv_linux
     fi
 }
 
@@ -133,7 +134,7 @@ _install_delta() {  # install delta diff tool for Linux
     DELTA_VERSION="0.18.2"
     if ! command -v delta &> /dev/null
     then
-        echo " ...installing delta"
+        echo "  ...installing delta"
         wget  -P /tmp/ "https://github.com/dandavison/delta/releases/download/${DELTA_VERSION}/git-delta_${DELTA_VERSION}_amd64.deb"
         sudo dpkg -i /tmp/git-delta_${DELTA_VERSION}_amd64.deb
         rm /tmp/git-delta_${DELTA_VERSION}_amd64.deb
@@ -141,15 +142,28 @@ _install_delta() {  # install delta diff tool for Linux
     fi
 }
 
+_install_uv_linux() {  # install uv for Linux
+    if ! command -v uv &> /dev/null
+    then
+        echo "  ...installing uv"
+        curl -LsSf https://astral.sh/uv/install.sh | sh
+        echo "  ...uv for Linux installed"
+    fi
+}
+
 _install_scoop() {  # install scoop for Windows
     if ! command -v scoop &> /dev/null; then
+        echo "  ...installing scoop"
         powershell -ExecutionPolicy ByPass -c "irm get.scoop.sh | iex"
+        echo "  ...scoop for Windows installed"
     fi
 }
 
 _install_uv() {  # install uv for Windows
     if ! command -v uv &> /dev/null; then
+        echo "  ...installing uv"
         powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+        echo "  ...uv for Windows installed"
     fi
 }
 
