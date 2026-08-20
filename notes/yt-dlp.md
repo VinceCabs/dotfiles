@@ -6,9 +6,13 @@ Update
 
 `yt-dlp --update`
 
+Simple video download (tolerate URL with playlist)
+
+`yt-dlp -t mp4 --no-playlist --restrict-filenames --windows-filenames "<URL>"`
+
 Download playlist into MP4:
 
-`yt-dlp --format mp4 --ignore-errors --concurrent-fragments 4 --restrict-filenames --yes-playlist --output "%(playlist)s/%(playlist_index)s-%(title)s.%(ext)s" --windows-filenames <URL>`
+`yt-dlp -t mp4 --ignore-errors --concurrent-fragments 4 --restrict-filenames --yes-playlist --output "%(playlist)s/%(playlist_index)s-%(title)s.%(ext)s" --windows-filenames "<URL>"`
 
 Avoid certificate check
 
